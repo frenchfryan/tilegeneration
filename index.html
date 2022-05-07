@@ -65,6 +65,40 @@
         #menu a.active:hover {
             background: #3074a4;
         }
+
+        h2, h3 {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgba(0, 0, 0, 0.2);
+            margin-left: 20px;
+            font-family: Arial, sans-serif;
+            overflow: auto;
+            border-radius: 3px;
+        }
+
+        #features {
+            top: 0;
+            height: 125px;
+            margin-top: 20px;
+            width: 250px;
+        }
     </style>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
 </head>
@@ -72,6 +106,13 @@
 <body>
     <nav id="menu"></nav>
     <div id='map'></div>
+    <div class='map-overlay' id='features'>
+        <h2>Hospital Locations in Seattle</h2>
+        <div id='text-description'>
+            <p>This map has adjustable layers on the top right side of the map!</p>
+        </div>
+    </div>
+    <div class='map-overlay' id='legend'></div>
     <script type="text/javascript">
         mapboxgl.accessToken =
             'pk.eyJ1IjoiamFrb2J6aGFvIiwiYSI6ImNpcms2YWsyMzAwMmtmbG5icTFxZ3ZkdncifQ.P9MBej1xacybKcDN_jehvw';
@@ -84,6 +125,8 @@
 
         map.on('load', () => { //simplifying the function statement: arrow with brackets to define a function
 
+            map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+            map.addControl(new mapboxgl.ScaleControl(), "bottom-right");
             map.addSource('Seattle Basemap-tiles', {
                 'type': 'raster',
                 'tiles': [
@@ -155,7 +198,6 @@
                 },
                 'source': 'Black History Month-tiles'
             });
-
         });
 
 
