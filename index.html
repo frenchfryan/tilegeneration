@@ -4,7 +4,6 @@
 <head>
     <title>Map Design</title>
     <meta charset="utf-8" />
-    <title>Seattle Tiles Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
 
@@ -88,7 +87,7 @@
             map.addSource('Seattle Basemap-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/Seattle Basemap/{z}/{x}/{y}.png'
+                    'tiles/Seattle Basemap/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Ryan Danao</a>'
@@ -97,7 +96,7 @@
             map.addSource('Hospital Locations-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/Hospital Locations/{z}/{x}/{y}.png'
+                    'tiles/Hospital Locations/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Ryan Danao</a>'
@@ -106,7 +105,7 @@
             map.addSource('Seattle Basemap and Hospital Data-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/Seattle Basemap and Hospital Data/{z}/{x}/{y}.png'
+                    'tiles/Seattle Basemap and Hospital Data/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Ryan Danao'
@@ -115,7 +114,7 @@
             map.addSource('Black History Month-tiles', {
                 'type': 'raster',
                 'tiles': [
-                    'assets/Black History Month/{z}/{x}/{y}.png'
+                    'tiles/Black History Month/{z}/{x}/{y}.png'
                 ],
                 'tileSize': 256,
                 'attribution': 'Map tiles designed by Ryan Danao'
